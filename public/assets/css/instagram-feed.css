@@ -1,0 +1,121 @@
+/* Instagram Feed Custom Styles */
+.instagram-feed-custom {
+    /* background: ; */
+    /* background: url('../images/bg/back1.png') no-repeat center center,linear-gradient(135deg, #fef9f5 0%, #fef5ed 100%); */
+    /* padding: 60px 20px; */
+    text-align: center;
+}
+
+.instagram-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.instagram-heading {
+    font-size: 42px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.instagram-text {
+    color: #f03333;
+    /* font-family: 'Pacifico', cursive; */
+}
+
+.captures-text {
+    color: #333;
+    /* font-family: 'Pacifico', cursive; */
+}
+
+.instagram-subtitle {
+    color: #6c757d;
+    font-size: 16px;
+    margin-bottom: 50px;
+}
+
+.instagram-grid {
+    display: grid;
+    /* grid-template-columns: repeat(2, 1fr); */
+    gap: 15px;
+    margin-bottom: 50px;
+}
+
+.instagram-item {
+    width: 100%;
+    transition: transform 0.3s ease;
+}
+
+.instagram-item:hover {
+    transform: translateY(-5px);
+}
+
+.instagram-media {
+    background: #FFF !important;
+    border: 0 !important;
+    border-radius: 12px !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1) !important;
+    margin: 0 !important;
+    max-width: 100% !important;
+    min-width: 100% !important;
+    padding: 0 !important;
+}
+
+.instagram-follow-btn {
+    display: inline-block;
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    color: white;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 15px 50px;
+    border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.instagram-follow-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(220, 39, 67, 0.3);
+    background: linear-gradient(45deg, #bc1888 0%, #cc2366 25%, #dc2743 50%, #e6683c 75%, #f09433 100%);
+    color: white;
+}
+
+.instagram-follow-btn i {
+    margin-right: 10px;
+    font-size: 24px;
+}
+
+/* Tablet - 3 columns */
+@media (min-width: 768px) {
+    .instagram-feed-custom {
+        padding: 80px 40px;
+    }
+    
+    .instagram-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+    
+    .instagram-heading {
+        font-size: 48px;
+    }
+}
+
+/* Desktop - 4 columns */
+@media (min-width: 1024px) {
+    .instagram-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 25px;
+    }
+    
+    .instagram-heading {
+        font-size: 54px;
+    }
+}
+
+/* Large Desktop - 4 columns with more spacing */
+@media (min-width: 1200px) {
+    .instagram-grid {
+        gap: 30px;
+    }
+}

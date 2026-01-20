@@ -1,0 +1,70 @@
+/* Media Page Specific Styles */
+
+.video-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    background: #fff;
+}
+
+.video-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.video-info h5 {
+    color: #ec4899;
+    font-family: 'Poppins', sans-serif;
+}
+
+.video-info p {
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+.image-tagline {
+    color: #f97316;
+    font-family: 'Poetsen One', cursive;
+}
+
+.highlight {
+    background: linear-gradient(45deg, #ec4899, #f97316);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: bold;
+}
+
+/* Image Hover Effects */
+.img-hover-scale {
+    transition: transform 0.3s ease;
+}
+
+.img-hover-scale:hover {
+    transform: scale(1.05);
+}
+
+/* Custom Section Styles */
+.section-title {
+    font-size: 2.5rem;
+    font-family: 'Poetsen One', cursive;
+    color: #2d3748;
+}
+
+.captures-text {
+    color: #f97316;
+}
+
+.instagram-text {
+    color: #ec4899;
+}
+
+/* Video Section Spacing */
+@media (max-width: 768px) {
+    .video-card {
+        margin-bottom: 2rem;
+    }
+}
+
+
