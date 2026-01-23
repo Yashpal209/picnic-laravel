@@ -1,5 +1,3 @@
-
-
 <?php $__env->startSection('title', $page_title ?? 'PICNIC - ICE CREAM'); ?>
 <?php $__env->startSection('meta_description',
     $meta_description ??
@@ -7,6 +5,14 @@
     100% pure cow milk.'); ?>
 
 <?php $__env->startSection('content'); ?>
+    <?php if(session('success')): ?>
+        <div class="alert alert-success alert-dismissible fade show position-fixed"
+            style="top: 20px; right: 20px; z-index: 9999; max-width: 400px;" role="alert">
+            <?php echo e(session('success')); ?>
+
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    <?php endif; ?>
 
     <section class="slider position-relative overflow-hidden">
         <?php $__empty_1 = true; $__currentLoopData = $sliders; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $index => $slide): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?>
@@ -82,66 +88,69 @@
             </h2>
             <?php
                 $bgClasses = ['og-card-pink', 'og-card-brown', 'og-card-tan', 'og-card-green'];
-                $fallbackImages = [
-                    asset('assets/images/ice-creem/1.png'),
-                    asset('assets/images/ice-creem/3.png'),
-                    asset('assets/images/ice-creem/5.png'),
-                    asset('assets/images/ice-creem/7.png'),
-                ];
             ?>
             <?php $__currentLoopData = $categories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $idx => $category): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                <div
-                    class="col-12 col-sm-6 col-lg-3 position-relative d-flex flex-column justify-content-center align-items-center p-4 p-md-5 text-white <?php echo e($bgClasses[$idx % count($bgClasses)]); ?>">
+                <a href="<?php echo e(route('flavours', $category->slug)); ?>"
+                    class="col-12 col-sm-6 col-lg-3 position-relative d-flex flex-column justify-content-center align-items-center p-4 p-md-5 text-white <?php echo e($bgClasses[$idx % count($bgClasses)]); ?> text-decoration-none">
                     <h3 class="display-6 fw-bold mb-4 text-shadow-dark"><?php echo e($category->name); ?></h3>
-                    <img src="<?php echo e($category->thumbnail ?: $fallbackImages[$idx % count($fallbackImages)]); ?>"
-                        alt="<?php echo e($category->name); ?>" class="rounded-circle mb-4 og-card-img-main">
-                </div>
+                    <img src="<?php echo e($category->thumbnail); ?>" alt="<?php echo e($category->name); ?>"
+                        class="rounded-circle mb-4 og-card-img-main">
+                </a>
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         </div>
     </section>
 
-    <section class="insta-capture py-4">
+    <?php if($videos->count() > 0): ?>
+    <section class="youtube-video py-5">
+        <div class="container">
+            <h2 class="display-5 fw-bold  text-center pb-2">
+                Watch Our <span class="text-danger">Videos</span>
+            </h2>
+            <div class="row">
+                <?php $__currentLoopData = $videos->take(4); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $video): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <div class="col-md-3 col-6 p-0 m-0">
+                        <iframe class="w-100 youtube-iframe" src="https://www.youtube.com/embed/<?php echo e($video->video_id); ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+            </div>
+        </div>
+    </section>
+    <?php endif; ?>
+
+    <section class="insta-capture pb-4 bg">
         <div class="container-fluid">
             <h2 class="instagram-heading text-center py-4">
                 <span class="instagram-text">Instagram</span> <span class="captures-text">Captures</span>
             </h2>
             <div class="row">
-                <?php
-                    $galleryImages = [
-                        'assets/images/flavors/1.png',
-                        'assets/images/flavors/2.png',
-                        'assets/images/flavors/3.png',
-                        'assets/images/flavors/4.png',
-                        'assets/images/flavors/5.png',
-                        'assets/images/flavors/6.png',
-                        'assets/images/flavors/3.png',
-                        'assets/images/flavors/2.png',
-                    ];
-                ?>
-                <?php $__currentLoopData = $galleryImages; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $img): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                <?php $__empty_1 = true; $__currentLoopData = $instagram_posts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $post): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?>
                     <div class="col-md-3 col-4 p-0 m-0">
-                        <a href="https://www.instagram.com/picnic_icecreams/" target="_blank">
-                            <img src="<?php echo e(asset($img)); ?>" alt="Instagram preview" class="img-fluid">
+                        <a href="<?php echo e($post->post_url ?: 'https://www.instagram.com/picnic_icecreams/'); ?>" target="_blank">
+                            <img src="<?php echo e(asset($post->image)); ?>" alt="Instagram preview" class="img-fluid">
                         </a>
                         <div class="instagram-overlay">
                             <div class="d-flex gap-2">
-                                <a href="https://www.instagram.com/picnic_icecreams/" target="_blank" class="instagram-icon"
-                                    aria-label="Like">
+                                <a href="<?php echo e($post->post_url ?: 'https://www.instagram.com/picnic_icecreams/'); ?>"
+                                    target="_blank" class="instagram-icon" aria-label="Like">
                                     <i class="bi bi-heart-fill icon-like"></i>
                                 </a>
-                                <a href="https://www.instagram.com/picnic_icecreams/" target="_blank" class="instagram-icon"
-                                    aria-label="Comment">
+                                <a href="<?php echo e($post->post_url ?: 'https://www.instagram.com/picnic_icecreams/'); ?>"
+                                    target="_blank" class="instagram-icon" aria-label="Comment">
                                     <i class="bi bi-chat-dots-fill icon-comment"></i>
                                 </a>
-                                <a href="https://www.instagram.com/picnic_icecreams/" target="_blank" class="instagram-icon"
-                                    aria-label="Share">
+                                <a href="<?php echo e($post->post_url ?: 'https://www.instagram.com/picnic_icecreams/'); ?>"
+                                    target="_blank" class="instagram-icon" aria-label="Share">
                                     <i class="bi bi-share-fill icon-share"></i>
                                 </a>
                             </div>
                             <div class="instagram-overlay-text">View on Instagram</div>
                         </div>
                     </div>
-                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>
+                    <div class="col-12 text-center py-4">
+                        <p class="text-muted">No Instagram posts available.</p>
+                    </div>
+                <?php endif; ?>
             </div>
         </div>
     </section>
@@ -156,32 +165,109 @@
             <div class="row g-4 g-md-5 align-items-center">
                 <!-- Left: Form -->
                 <div class="col-md-6">
-                    <form class="bg-white p-4 rounded-3 shadow-lg">
+                    <form action="<?php echo e(route('leads.business')); ?>" method="POST" class="bg-white p-4 rounded-3 shadow-lg">
+                        <?php echo csrf_field(); ?>
                         <div class="mb-3">
                             <label for="name" class="form-label text-start d-block fw-semibold text-dark">Name</label>
-                            <input type="text" id="name" name="name" class="form-control border-2" required>
+                            <input type="text" id="name" name="name"
+                                class="form-control border-2 <?php $__errorArgs = ['name'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>"
+                                value="<?php echo e(old('name')); ?>" required>
+                            <?php $__errorArgs = ['name'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                                <div class="invalid-feedback"><?php echo e($message); ?></div>
+                            <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
                         </div>
 
                         <div class="mb-3">
                             <label for="phone" class="form-label text-start d-block fw-semibold text-dark">Contact
                                 Number</label>
-                            <input type="tel" id="phone" name="phone" class="form-control border-2" required>
+                            <input type="tel" id="phone" name="phone"
+                                class="form-control border-2 <?php $__errorArgs = ['phone'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>"
+                                value="<?php echo e(old('phone')); ?>" required>
+                            <?php $__errorArgs = ['phone'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                                <div class="invalid-feedback"><?php echo e($message); ?></div>
+                            <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
                         </div>
 
                         <div class="mb-3">
                             <label for="address"
                                 class="form-label text-start d-block fw-semibold text-dark">Location</label>
-                            <textarea id="address" name="address" rows="3" class="form-control border-2" required></textarea>
+                            <textarea id="address" name="address" rows="3"
+                                class="form-control border-2 <?php $__errorArgs = ['address'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>" required><?php echo e(old('address')); ?></textarea>
+                            <?php $__errorArgs = ['address'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                                <div class="invalid-feedback"><?php echo e($message); ?></div>
+                            <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
                         </div>
 
                         <div class="mb-3">
                             <label for="business_type"
                                 class="form-label text-start d-block fw-semibold text-dark">Business Inquiry</label>
-                            <select id="business_type" name="business_type" class="form-control border-2" required>
+                            <select id="business_type" name="business_type"
+                                class="form-control border-2 <?php $__errorArgs = ['business_type'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>" required>
                                 <option value="">Select</option>
-                                <option value="distributor">Distributor</option>
-                                <option value="franchise">Franchise</option>
+                                <option value="distributor" <?php echo e(old('business_type') == 'distributor' ? 'selected' : ''); ?>>
+                                    Distributor</option>
+                                <option value="franchise" <?php echo e(old('business_type') == 'franchise' ? 'selected' : ''); ?>>
+                                    Franchise</option>
                             </select>
+                            <?php $__errorArgs = ['business_type'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                                <div class="invalid-feedback"><?php echo e($message); ?></div>
+                            <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
                         </div>
 
                         <button type="submit" name="submit"

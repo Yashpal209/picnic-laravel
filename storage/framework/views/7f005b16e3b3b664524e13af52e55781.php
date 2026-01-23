@@ -1,5 +1,3 @@
-
-
 <?php $__env->startSection('title', 'Admin - Videos'); ?>
 <?php $__env->startSection('header', 'Videos'); ?>
 

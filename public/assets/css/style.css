@@ -856,7 +856,8 @@ header .container-fluid {
 
 /* Z-index utility */
 .z-custom {
-    z-index: 1200; /* ensure header stays above mobile menu */
+    z-index: 1200;
+    /* ensure header stays above mobile menu */
 }
 
 /* Sticky relative for medium screens and up */
@@ -943,7 +944,8 @@ header .container-fluid {
 #mobile-menu.mobile-nav,
 #mobile-menu.mobile-menu-bg {
     background: #fff;
-    z-index: 1050; /* above sticky header and content */
+    z-index: 1050;
+    /* above sticky header and content */
 }
 
 /* Mobile menu scroll when content exceeds viewport */
@@ -1225,7 +1227,7 @@ header .container-fluid {
     top: 20px;
     right: 20px;
     color: rgb(247 247 247);
-    background: linear-gradient(155deg,  #f58927ba, #ed1790a1);
+    background: linear-gradient(155deg, #f58927ba, #ed1790a1);
     padding: 10px 20px;
     border-radius: 50px;
     font-weight: bold;
@@ -1998,7 +2000,8 @@ header .container-fluid {
 }
 
 .products-section .product-card h4 {
-    flex-grow: 1; /* This makes the title area expand */
+    flex-grow: 1;
+    /* This makes the title area expand */
     font-size: 1.1rem;
     font-weight: 600;
     margin-bottom: 0.5rem;
@@ -2007,7 +2010,8 @@ header .container-fluid {
 .products-section .product-card .price {
     font-size: 1.2rem;
     font-weight: 700;
-    color: #db2777; /* Pink color */
+    color: #db2777;
+    /* Pink color */
     margin-bottom: 1rem;
 }
 
@@ -2163,11 +2167,43 @@ header .container-fluid {
 .youtube-iframe {
     height: 450px;
 }
-/* @media (max-width: 768px) {
-    .youtube-iframe {
-        height: 100%;
-    }
-} */
+
+/* All Flavours Simple Design */
+.all-flavours-simple {
+    display: inline-block;
+    background: linear-gradient(45deg, #ec4899, #f97316);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(236, 72, 153, 0.3);
+    border: 2px solid transparent;
+}
+
+.all-flavours-simple:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(236, 72, 153, 0.4);
+    background: linear-gradient(45deg, #f97316, #ec4899);
+    border-color: #fff;
+    color: white;
+}
+
+.all-flavours-simple.active {
+    background: linear-gradient(45deg, #be185d, #c2410c);
+    border-color: #fff;
+    box-shadow: 0 4px 15px rgba(190, 24, 93, 0.4);
+}
+
+.all-flavours-simple i {
+    transition: transform 0.3s ease;
+}
+
+.all-flavours-simple:hover i {
+    transform: translateX(3px);
+}
 
 /* Theme Variables */
 @font-face {
@@ -3133,61 +3169,6 @@ header .container-fluid {
     text-align: center;
 }
 
-/* Mobile submenu styling */
-#mobile-menu .collapse.show {
-    display: block;
-}
-
-#mobile-menu [data-bs-toggle="collapse"] .bi-chevron-down {
-    transition: transform 0.3s ease;
-}
-
-#mobile-menu [data-bs-toggle="collapse"][aria-expanded="true"] .bi-chevron-down {
-    transform: rotate(180deg);
-}
-
-#mobile-menu .dropdown-item {
-    padding: 0.5rem 1rem;
-    color: #333;
-    text-decoration: none;
-    display: block;
-}
-
-#mobile-menu .dropdown-item:hover {
-    background-color: #f8f9fa;
-    color: #d9232d;
-}
-
-.bg {
-    background: url('../images/bg/back1.png');
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed;
-}
-
-.custom-bg {
-    position: relative;
-    background: url('../images/bg/pink.jpg') no-repeat center center;
-    background-size: cover;
-    background-position: bottom;
-    overflow: hidden;
-}
-
-
-
-.custom-bg::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100px;
-    background: url('../images/bg/overlay-bottom.png') no-repeat bottom center;
-    background-size: cover;
-    pointer-events: none;
-}
-
-
 
 .text-brand-red {
     color: #E53935;
@@ -3387,7 +3368,7 @@ header .container-fluid {
     top: 20px;
     right: 20px;
     color: rgb(247 247 247);
-    background: linear-gradient(155deg,  #f58927ba, #ed1790a1);
+    background: linear-gradient(155deg, #f58927ba, #ed1790a1);
     padding: 10px 20px;
     border-radius: 50px;
     font-weight: bold;
@@ -3668,6 +3649,7 @@ header .container-fluid {
 /* Contact Button Styles */
 .btn-submit-pink {
     background: linear-gradient(45deg, #ec4899, #f97316);
+    color: white;
     border: none;
     transition: all 0.3s ease;
     text-decoration: none;
@@ -3675,6 +3657,7 @@ header .container-fluid {
 
 .btn-submit-pink:hover {
     background: linear-gradient(45deg, #db2777, #ea580c);
+    color: whitesmoke;
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(236, 72, 153, 0.4);
 }
@@ -4105,7 +4088,7 @@ header .container-fluid {
 }
 
 .products-section .cat-item {
-    background: #e9f0fa;
+    background: #e4dbe3;
     padding: 15px;
     border-radius: 10px;
     text-align: left;
@@ -4118,8 +4101,8 @@ header .container-fluid {
 }
 
 .products-section .cat-item img {
-    width: 55px;
-    height: 55px;
+    width: 80px;
+    height: unset;
     border-radius: 100%;
 }
 
@@ -4138,7 +4121,8 @@ header .container-fluid {
 .products-section .product-card {
     display: flex;
     flex-direction: column;
-    width: 100%; /* Ensure card fills the column */
+    width: 100%;
+    /* Ensure card fills the column */
     background-color: #fff;
     border-radius: 15px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
@@ -4160,7 +4144,8 @@ header .container-fluid {
 }
 
 .products-section .product-card h4 {
-    flex-grow: 1; /* This makes the title area expand */
+    flex-grow: 1;
+    /* This makes the title area expand */
     font-size: 1.1rem;
     font-weight: 600;
     margin-bottom: 0.5rem;
@@ -4169,7 +4154,8 @@ header .container-fluid {
 .products-section .product-card .price {
     font-size: 1.2rem;
     font-weight: 700;
-    color: #db2777; /* Pink color */
+    color: #db2777;
+    /* Pink color */
     margin-bottom: 1rem;
 }
 
@@ -4325,6 +4311,7 @@ header .container-fluid {
 .youtube-iframe {
     height: 450px;
 }
+
 /* @media (max-width: 768px) {
     .youtube-iframe {
         height: 100%;
@@ -4349,7 +4336,7 @@ header .container-fluid {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.35) 60%, rgba(0,0,0,0.55) 100%);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.35) 60%, rgba(0, 0, 0, 0.55) 100%);
     opacity: 0;
     transition: opacity 0.3s ease;
     z-index: 5;
@@ -4456,14 +4443,17 @@ header .container-fluid {
 
 /* Mobile tuning: reduce motion for small screens */
 @media (max-width: 576px) {
+
     .insta-capture .col-md-3.col-4:hover img,
     .insta-capture .col-md-3.col-4:focus-within img {
         transform: scale(1.03);
     }
+
     .instagram-icon {
         width: 44px;
         height: 44px;
     }
+
     .instagram-overlay-text {
         font-size: 13px;
     }

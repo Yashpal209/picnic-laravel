@@ -40,7 +40,7 @@
         <nav class="d-flex flex-column align-items-center py-4" aria-label="Mobile navigation">
             <ul class="list-unstyled d-flex flex-column align-items-center gap-3 mb-0">
                 <li><a href="<?php echo e(route('home')); ?>" class="nav-link-custom fs-5"><i class="bi bi-house-fill me-2"></i>Home</a></li>
-                <li><a href="#" class="nav-link-custom fs-5">Brand Story</a></li>
+                <li><a href="<?php echo e(route('about')); ?>" class="nav-link-custom fs-5">Brand Story</a></li>
                 <li class="dropdown w-100 text-center">
                     <a class="nav-link-custom fs-5" data-bs-toggle="collapse" href="#flavourSub" role="button" aria-expanded="false" aria-controls="flavourSub">
                         Our Flavours<i class="bi bi-chevron-down ms-1"></i>
@@ -74,7 +74,7 @@
 <div class="d-none d-md-flex container-fluid justify-content-center align-items-center header-nav-wrapper header-line sticky-top">
     <nav class="d-flex p-2 align-items-center flex-wrap gap-1 gap-md-3 gap-lg-4 gap-xl-5 px-3 px-md-2">
         <a href="<?php echo e(route('home')); ?>" class="nav-link-custom"><i class="bi bi-house-fill me-2"></i></a>
-        <a href="#" class="nav-link-custom">Brand story</a>
+        <a href="<?php echo e(route('about')); ?>" class="nav-link-custom">Brand story</a>
 
         <div class="dropdown">
             <a href="#" class="nav-link-custom dropdown-toggle" id="flavoursDropdown" data-bs-toggle="dropdown" role="button" aria-expanded="false">

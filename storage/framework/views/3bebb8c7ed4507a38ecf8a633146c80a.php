@@ -8,12 +8,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="shortcut icon" href="<?php echo e(asset('assets/images/favicon.png')); ?>" type="image/x-icon">
     <link rel="stylesheet" href="<?php echo e(asset('assets/css/admin.css')); ?>">
-    
+
 </head>
 <body class="admin-body">
 <div class="d-flex h-100 admin-shell">
     <nav class="sidebar d-none d-lg-flex flex-column border-end p-3">
-        <h5 class="mb-4 d-flex align-items-center gap-2"><i class="bi bi-shop"></i> PICNIC Admin</h5>
+        <div class="mb-4 d-flex align-items-center justify-content-center">
+            <img src="<?php echo e(asset('assets/images/picnic-removebg-preview.png')); ?>" alt="PICNIC Logo" style="height: 40px; width: auto;">
+        </div>
         <div class="nav flex-column nav-pills gap-2">
             <a href="<?php echo e(route('admin.dashboard')); ?>" class="nav-link <?php echo e(request()->routeIs('admin.dashboard') ? 'active' : ''); ?>">
                 <i class="bi bi-speedometer2"></i> Dashboard
@@ -30,11 +32,12 @@
             <a href="<?php echo e(route('admin.stores.index')); ?>" class="nav-link <?php echo e(request()->routeIs('admin.stores.*') ? 'active' : ''); ?>">
                 <i class="bi bi-shop"></i> Stores
             </a>
-            <a href="<?php echo e(route('admin.testimonials.index')); ?>" class="nav-link <?php echo e(request()->routeIs('admin.testimonials.*') ? 'active' : ''); ?>">
-                <i class="bi bi-chat-quote"></i> Testimonials
-            </a>
+            
             <a href="<?php echo e(route('admin.videos.index')); ?>" class="nav-link <?php echo e(request()->routeIs('admin.videos.*') ? 'active' : ''); ?>">
                 <i class="bi bi-play-circle"></i> Videos
+            </a>
+            <a href="<?php echo e(route('admin.instagram-posts.index')); ?>" class="nav-link <?php echo e(request()->routeIs('admin.instagram-posts.*') ? 'active' : ''); ?>">
+                <i class="bi bi-instagram"></i> Instagram Posts
             </a>
             <a href="<?php echo e(route('admin.leads.index')); ?>" class="nav-link <?php echo e(request()->routeIs('admin.leads.*') ? 'active' : ''); ?>">
                 <i class="bi bi-chat-dots"></i> Leads
@@ -88,8 +91,8 @@
 </div>
 
 <div class="offcanvas offcanvas-start admin-offcanvas" tabindex="-1" id="adminMobileNav" aria-labelledby="adminMobileNavLabel">
-    <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="adminMobileNavLabel"><i class="bi bi-shop"></i> PICNIC Admin</h5>
+    <div class="offcanvas-header d-flex align-items-center justify-content-between">
+        <img src="<?php echo e(asset('assets/images/picnic-removebg-preview.png')); ?>" alt="PICNIC Logo" style="height: 35px; width: auto;">
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
@@ -109,11 +112,12 @@
             <a href="<?php echo e(route('admin.stores.index')); ?>" class="nav-link <?php echo e(request()->routeIs('admin.stores.*') ? 'active' : ''); ?>" data-bs-dismiss="offcanvas">
                 <i class="bi bi-shop"></i> Stores
             </a>
-            <a href="<?php echo e(route('admin.testimonials.index')); ?>" class="nav-link <?php echo e(request()->routeIs('admin.testimonials.*') ? 'active' : ''); ?>" data-bs-dismiss="offcanvas">
-                <i class="bi bi-chat-quote"></i> Testimonials
-            </a>
+            
             <a href="<?php echo e(route('admin.videos.index')); ?>" class="nav-link <?php echo e(request()->routeIs('admin.videos.*') ? 'active' : ''); ?>" data-bs-dismiss="offcanvas">
                 <i class="bi bi-play-circle"></i> Videos
+            </a>
+            <a href="<?php echo e(route('admin.instagram-posts.index')); ?>" class="nav-link <?php echo e(request()->routeIs('admin.instagram-posts.*') ? 'active' : ''); ?>" data-bs-dismiss="offcanvas">
+                <i class="bi bi-instagram"></i> Instagram Posts
             </a>
             <a href="<?php echo e(route('admin.leads.index')); ?>" class="nav-link <?php echo e(request()->routeIs('admin.leads.*') ? 'active' : ''); ?>" data-bs-dismiss="offcanvas">
                 <i class="bi bi-chat-dots"></i> Leads
@@ -127,6 +131,47 @@
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+// Ensure offcanvas works properly on mobile
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize offcanvas if not already initialized
+    const offcanvasElement = document.getElementById('adminMobileNav');
+    if (offcanvasElement) {
+        const offcanvas = new bootstrap.Offcanvas(offcanvasElement);
+
+        // Add click handlers to nav links to ensure they work
+        const navLinks = offcanvasElement.querySelectorAll('.nav-link[data-bs-dismiss="offcanvas"]');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                // Prevent default behavior briefly to ensure offcanvas closes
+                e.preventDefault();
+
+                // Hide offcanvas first
+                offcanvas.hide();
+
+                // Then navigate after a short delay to ensure offcanvas closes
+                setTimeout(() => {
+                    window.location.href = this.href;
+                }, 300);
+            });
+        });
+    }
+
+    // Additional fix for touch devices
+    const mobileToggle = document.querySelector('[data-bs-toggle="offcanvas"][data-bs-target="#adminMobileNav"]');
+    if (mobileToggle) {
+        mobileToggle.addEventListener('click', function() {
+            setTimeout(() => {
+                const offcanvas = document.getElementById('adminMobileNav');
+                if (offcanvas && offcanvas.classList.contains('show')) {
+                    // Ensure z-index is correct for mobile nav
+                    offcanvas.style.zIndex = '1050';
+                }
+            }, 100);
+        });
+    }
+});
+</script>
 </body>
 </html>
 <?php /**PATH C:\xampp\htdocs\yashpal\picnic-laravel\resources\views/admin/layouts/admin.blade.php ENDPATH**/ ?>

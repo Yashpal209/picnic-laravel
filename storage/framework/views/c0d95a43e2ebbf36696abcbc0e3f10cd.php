@@ -1,5 +1,3 @@
-
-
 <?php $__env->startSection('title', 'Contact Us - Picnic Ice Creams'); ?>
 <?php $__env->startSection('meta_description', 'Contact PICNIC Ice Creams for enquiries and support.'); ?>
 

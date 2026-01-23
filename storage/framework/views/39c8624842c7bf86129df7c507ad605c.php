@@ -1,5 +1,3 @@
-
-
 <?php $__env->startSection('title', 'Admin - Products'); ?>
 <?php $__env->startSection('header', 'Products'); ?>
 
@@ -35,15 +33,15 @@
                     <td><?php echo e($product->category?->name); ?></td>
                     <td><?php echo e($product->price ? '₹' . number_format($product->price, 2) : '-'); ?></td>
                     <td>
-                        <a href="<?php echo e(route('admin.products.edit', $product)); ?>" class="btn btn-xs btn-outline-primary">Edit</a>
+                        <a href="<?php echo e(route('admin.products.edit', $product)); ?>" class="btn btn-sm btn-outline-primary">Edit</a>
                         <form action="<?php echo e(route('admin.products.destroy', $product)); ?>" method="POST" style="display: inline;">
                             <?php echo csrf_field(); ?> <?php echo method_field('DELETE'); ?>
-                            <button type="submit" class="btn btn-xs btn-outline-danger" onclick="return confirm('Delete?')">Delete</button>
+                            <button type="submit" class="btn btn-sm btn-outline-danger" onclick="return confirm('Are You Sure !! Delete?')">Delete</button>
                         </form>
                     </td>
                 </tr>
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>
-                <tr><td colspan="5" class="text-center text-muted py-4">No products. <a href="<?php echo e(route('admin.products.create')); ?>">Create one</a></td></tr>
+                <tr><td colspan="6" class="text-center text-muted py-4">No products. <a href="<?php echo e(route('admin.products.create')); ?>" class="btn btn-sm btn-outline-danger">Create one</a></td></tr>
             <?php endif; ?>
             </tbody>
         </table>

@@ -77,7 +77,17 @@ class SliderController extends Controller
 
     public function destroy(Slider $slider)
     {
+        // Delete image from storage if exists
+        if ($slider->image && str_starts_with($slider->image, '/storage/')) {
+            Storage::disk('public')->delete(
+                str_replace('/storage/', '', $slider->image)
+            );
+        }
+
         $slider->delete();
-        return redirect()->route('admin.sliders.index')->with('success', 'Slider deleted.');
+
+        return redirect()
+            ->route('admin.sliders.index')
+            ->with('success', 'Slider deleted.');
     }
 }

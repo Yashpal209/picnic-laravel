@@ -1,5 +1,3 @@
-
-
 <?php $__env->startSection('title', 'Admin - Sliders'); ?>
 <?php $__env->startSection('header', 'Sliders'); ?>
 
@@ -39,15 +37,15 @@
                     <td><?php echo e($slider->sort_order); ?></td>
                     <td><span class="badge <?php echo e($slider->active ? 'bg-success' : 'bg-secondary'); ?>"><?php echo e($slider->active ? 'Yes' : 'No'); ?></span></td>
                     <td>
-                        <a href="<?php echo e(route('admin.sliders.edit', $slider)); ?>" class="btn btn-xs btn-outline-primary">Edit</a>
+                        <a href="<?php echo e(route('admin.sliders.edit', $slider)); ?>" class="btn btn-sm btn-outline-primary">Edit</a>
                         <form action="<?php echo e(route('admin.sliders.destroy', $slider)); ?>" method="POST" style="display: inline;">
                             <?php echo csrf_field(); ?> <?php echo method_field('DELETE'); ?>
-                            <button type="submit" class="btn btn-xs btn-outline-danger" onclick="return confirm('Delete?')">Delete</button>
+                            <button type="submit" class="btn btn-sm btn-outline-danger" onclick="return confirm('Are You Sure Delete?')">Delete</button>
                         </form>
                     </td>
                 </tr>
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>
-                <tr><td colspan="7" class="text-center text-muted py-4">No sliders. <a href="<?php echo e(route('admin.sliders.create')); ?>">Create one</a></td></tr>
+                <tr><td colspan="8" class="text-center text-muted py-4">No sliders. <a href="<?php echo e(route('admin.sliders.create')); ?>" class="btn btn-sm btn-outline-danger">Create one</a></td></tr>
             <?php endif; ?>
             </tbody>
         </table>

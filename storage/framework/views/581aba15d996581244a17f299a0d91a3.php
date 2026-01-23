@@ -1,5 +1,3 @@
-
-
 <?php $__env->startSection('title', isset($slider) ? 'Edit Slider' : 'Add Slider'); ?>
 <?php $__env->startSection('header', isset($slider) ? 'Edit Slider' : 'Add Slider'); ?>
 
