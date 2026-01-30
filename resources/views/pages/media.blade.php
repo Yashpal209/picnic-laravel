@@ -45,7 +45,7 @@
                 <div class="col-md-4 pt-3">
                     <div class="text-1 text-center p-2">
                         <div class="text">
-                            <img src="{{ asset('public/' . ($post->image ?? 'assets/images/placeholder.png')) }}" alt="Instagram Gallery" class="img-fluid">
+                            <img src="{{ asset('public/' . ($post->image ?? 'public/assets/images/500x350.png')) }}" alt="Instagram Gallery" class="img-fluid">
                         </div>
                         <p class="text-center">Instagram Post</p>
                         <div class="d-grid">

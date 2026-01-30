@@ -29,11 +29,11 @@
                 <div class="col-lg-6">
                     <div class="text-center">
                         @if ($product->image)
-                            <img src="{{ asset($product->image) }}" alt="{{ $product->name }}"
+                            <img src="{{ asset('public/'.$product->image) }}" alt="{{ $product->name }}"
                                 class="img-hover-scale rounded-4 g"
                                 style="max-width: 100%; height: 400px; object-fit: contain;">
                         @else
-                            <img src="{{ asset('public/assets/images/placeholder.png') }}" alt="Product Image"
+                            <img src="{{ asset('public/assets/images/500x350.png') }}" alt="Product Image"
                                 class="img-hover-scale rounded-4 "
                                 style="max-width: 100%; height: 400px; object-fit: contain;">
                         @endif
@@ -105,7 +105,7 @@
                         <div class="col-md-4 mb-4">
                             <div class="bg-white p-3 rounded-4 shadow-lg text-center h-100">
                                 @if ($related->image)
-                                    <img src="{{ asset($related->image) }}" alt="{{ $related->name }}"
+                                    <img src="{{ asset('public/'.$related->image) }}" alt="{{ $related->name }}"
                                         class="img-hover-scale rounded-3 mb-3"
                                         style="width: 100%; height: 200px; object-fit: contain;">
                                 @endif
