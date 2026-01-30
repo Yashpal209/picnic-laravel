@@ -1557,7 +1557,7 @@ header .container-fluid {
 }
 
 .order-sec {
-    background: url('assets/images/500x500.png') center/cover no-repeat;
+    background: url('public/assets/images/500x500.png') center/cover no-repeat;
     height: 100vh;
     width: 100%;
     position: relative;
@@ -3700,7 +3700,7 @@ header .container-fluid {
 }
 
 .order-sec {
-    background: url('assets/images/500x500.png') center/cover no-repeat;
+    background: url('public/assets/images/500x500.png') center/cover no-repeat;
     height: 100vh;
     width: 100%;
     position: relative;

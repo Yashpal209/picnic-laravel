@@ -13,6 +13,7 @@
             <thead>
                 <tr>
                     <th>#</th>
+                    <th>Preview</th>
                     <th>Video ID</th>
                     <th>Type</th>
                     <th>Actions</th>
@@ -22,6 +23,11 @@
             <?php $__empty_1 = true; $__currentLoopData = $videos; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $video): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?>
                 <tr>
                     <td><?php echo e($video->id); ?></td>
+                    <td>
+                        <a href="https://www.youtube.com/watch?v=<?php echo e($video->video_id); ?>" target="_blank" rel="noopener">
+                            <img src="https://img.youtube.com/vi/<?php echo e($video->video_id); ?>/mqdefault.jpg" alt="video thumbnail" style="width:160px;height:auto;border-radius:4px;">
+                        </a>
+                    </td>
                     <td><code><?php echo e($video->video_id); ?></code></td>
                     <td><?php echo e($video->type); ?></td>
                     <td>
@@ -33,7 +39,7 @@
                     </td>
                 </tr>
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>
-                <tr><td colspan="4" class="text-center text-muted py-4">No videos. <a href="<?php echo e(route('admin.videos.create')); ?>">Create one</a></td></tr>
+                <tr><td colspan="5" class="text-center text-muted py-4">No videos. <a href="<?php echo e(route('admin.videos.create')); ?>">Create one</a></td></tr>
             <?php endif; ?>
             </tbody>
         </table>

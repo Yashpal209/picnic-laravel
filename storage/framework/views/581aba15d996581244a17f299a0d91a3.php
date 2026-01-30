@@ -81,7 +81,7 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                     <div id="imagePreview" class="mt-2" <?php if(empty($slider?->image)): ?> style="display:none;" <?php endif; ?>>
-                        <img id="previewImg" src="<?php echo e(asset($slider?->image ?? '')); ?>" alt="Preview"
+                        <img id="previewImg" src="<?php echo e(asset('public/' . ($slider?->image ?? ''))); ?>" alt="Preview"
                             class="img-thumbnail preview-thumb">
                         <p class="small text-muted mt-1">
                             <?php echo e(!empty($slider?->image) ? 'Current: ' . basename($slider->image) : ''); ?></p>

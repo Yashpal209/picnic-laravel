@@ -28,7 +28,7 @@
                     <td>{{ $product->id }}</td>
                     <td>
                         @if($product->image)
-                            <img src="{{ $product->image }}" alt="" class="img-thumbnail" style="max-height:60px;">
+                            <img src="{{ asset('public/' . $product->image) }}" alt="" class="img-thumbnail" style="max-height:60px;">
                         @endif
                     </td>
                     <td>{{ $product->name }}</td>

@@ -28,7 +28,7 @@
                     @endif
                 </div>
                 <div class="image-container">
-                    <img src="{{ $slide->image }}" class="slider-image" alt="{{ $slide->title }}">
+                    <img src="{{ asset('public/' . $slide->image) }}" class="slider-image" alt="{{ $slide->title }}">
                 </div>
                 @if ($slide->cta_text)
                     <div class="offer-badge">{{ $slide->cta_text }}</div>
@@ -42,7 +42,7 @@
                     <a href="#">Order Now</a>
                 </div>
                 <div class="image-container">
-                    <img src="{{ asset('assets/images/ice-creem/7.png') }}" class="slider-image" alt="Strawberry Ice Cream">
+                    <img src="{{ asset('public/assets/images/ice-creem/7.png') }}" class="slider-image" alt="Strawberry Ice Cream">
                 </div>
                 <div class="offer-badge">Download Brochures</div>
             </div>
@@ -94,7 +94,7 @@
                 <a href="{{ route('flavours', $category->slug) }}"
                     class="col-12 col-sm-6 col-lg-3 position-relative d-flex flex-column justify-content-center align-items-center p-4 p-md-5 text-white {{ $bgClasses[$idx % count($bgClasses)] }} text-decoration-none">
                     <h3 class="display-6 fw-bold mb-4 text-shadow-dark">{{ $category->name }}</h3>
-                    <img src="{{ $category->thumbnail }}" alt="{{ $category->name }}"
+                    <img src="{{ asset('public/' . $category->thumbnail) }}" alt="{{ $category->name }}"
                         class="rounded-circle mb-4 og-card-img-main">
                 </a>
             @endforeach
@@ -127,7 +127,7 @@
                 @forelse ($instagram_posts as $post)
                     <div class="col-md-3 col-4 p-0 m-0">
                         <a href="{{ $post->post_url ?: 'https://www.instagram.com/picnic_icecreams/' }}" target="_blank">
-                            <img src="{{ asset($post->image) }}" alt="Instagram preview" class="img-fluid">
+                            <img src="{{ asset('public/' . $post->image) }}" alt="Instagram preview" class="img-fluid">
                         </a>
                         <div class="instagram-overlay">
                             <div class="d-flex gap-2">
@@ -222,7 +222,7 @@
 
                 <!-- Right: Image -->
                 <div class="col-md-6">
-                    <img src="./assets/images/500x350.png" alt="Contact Distributor" class="w-100 h-auto rounded-3">
+                    <img src="{{ asset('public/assets/images/500x350.png') }}" alt="Contact Distributor" class="w-100 h-auto rounded-3">
                 </div>
             </div>
         </div>

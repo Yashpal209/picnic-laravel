@@ -26,7 +26,7 @@
                             <td><?php echo e($cat->id); ?></td>
                             <td>
                                 <?php if($cat->thumbnail): ?>
-                                    <img src="<?php echo e($cat->thumbnail); ?>" alt="" class="img-thumbnail"
+                                    <img src="<?php echo e(asset('public/' . $cat->thumbnail)); ?>" alt="" class="img-thumbnail"
                                         style="max-height:50px;">
                                 <?php endif; ?>
                             </td>

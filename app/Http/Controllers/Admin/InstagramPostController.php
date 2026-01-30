@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\InstagramPost;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 
 class InstagramPostController extends Controller
 {
@@ -29,8 +29,12 @@ class InstagramPostController extends Controller
         ]);
 
         if ($request->hasFile('image')) {
-            $path = $request->file('image')->store('instagram', 'public');
-            $data['image'] = '/storage/' . $path;
+            $file = $request->file('image');
+            $dir = public_path('uploads/instagram');
+            File::ensureDirectoryExists($dir);
+            $filename = time().'_'.uniqid().'.'.$file->getClientOriginalExtension();
+            $file->move($dir, $filename);
+            $data['image'] = '/uploads/instagram/' . $filename;
         }
 
         InstagramPost::create($data);
@@ -51,12 +55,19 @@ class InstagramPostController extends Controller
         ]);
 
         if ($request->hasFile('image')) {
-            if ($instagramPost->image && str_starts_with($instagramPost->image, '/storage/')) {
-                Storage::disk('public')->delete(str_replace('/storage/', '', $instagramPost->image));
+            if ($instagramPost->image && str_starts_with($instagramPost->image, '/uploads/')) {
+                $old = public_path(ltrim($instagramPost->image, '/'));
+                if (File::exists($old)) {
+                    File::delete($old);
+                }
             }
 
-            $path = $request->file('image')->store('instagram', 'public');
-            $data['image'] = '/storage/' . $path;
+            $file = $request->file('image');
+            $dir = public_path('uploads/instagram');
+            File::ensureDirectoryExists($dir);
+            $filename = time().'_'.uniqid().'.'.$file->getClientOriginalExtension();
+            $file->move($dir, $filename);
+            $data['image'] = '/uploads/instagram/' . $filename;
         }
 
         $instagramPost->update($data);
@@ -65,11 +76,12 @@ class InstagramPostController extends Controller
 
     public function destroy(InstagramPost $instagramPost)
     {
-        // Delete image from storage if exists
-        if ($instagramPost->image && str_starts_with($instagramPost->image, '/storage/')) {
-            Storage::disk('public')->delete(
-                str_replace('/storage/', '', $instagramPost->image)
-            );
+        // Delete image from public uploads if exists
+        if ($instagramPost->image && str_starts_with($instagramPost->image, '/uploads/')) {
+            $old = public_path(ltrim($instagramPost->image, '/'));
+            if (File::exists($old)) {
+                File::delete($old);
+            }
         }
 
         $instagramPost->delete();

@@ -95,7 +95,7 @@ endif;
 unset($__errorArgs, $__bag); ?>
                 <?php if(!empty($product?->image)): ?>
                     <div class="mt-2">
-                        <img src="<?php echo e($product->image); ?>" alt="Preview" class="img-thumbnail preview-thumb">
+                        <img src="<?php echo e(asset('public/' . $product->image)); ?>" alt="Preview" class="img-thumbnail preview-thumb">
                     </div>
                 <?php endif; ?>
             </div>

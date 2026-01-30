@@ -26,7 +26,7 @@
                     <td><?php echo e($product->id); ?></td>
                     <td>
                         <?php if($product->image): ?>
-                            <img src="<?php echo e($product->image); ?>" alt="" class="img-thumbnail" style="max-height:60px;">
+                            <img src="<?php echo e(asset('public/' . $product->image)); ?>" alt="" class="img-thumbnail" style="max-height:60px;">
                         <?php endif; ?>
                     </td>
                     <td><?php echo e($product->name); ?></td>

@@ -20,7 +20,7 @@
                     <?php $__currentLoopData = $categories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $cat): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <a href="<?php echo e(route('flavours', $cat->slug)); ?>"
                             class="cat-item mb-3 <?php echo e($selectedCategory?->id === $cat->id ? 'active' : ''); ?>">
-                            <img src="<?php echo e(asset($cat->thumbnail ?? 'assets/images/500x350.png')); ?>"
+                            <img src="<?php echo e(asset('public/' . ($cat->thumbnail ?? 'public/assets/images/500x350.png'))); ?>"
                                 alt="<?php echo e($cat->name); ?>">
                             <span><?php echo e($cat->name); ?></span>
                         </a>
@@ -34,7 +34,7 @@
                             <div class="col-md-4 mb-4">
                                 <div class="product-card text-center">
                                     <?php if($product->image): ?>
-                                        <img src="<?php echo e(asset($product->image)); ?>" alt="<?php echo e($product->name); ?>">
+                                        <img src="<?php echo e(asset('public/' . $product->image)); ?>" alt="<?php echo e($product->name); ?>">
                                     <?php endif; ?>
 
                                     <h4 class="mt-2"><?php echo e($product->name); ?></h4>

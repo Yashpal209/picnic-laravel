@@ -24,7 +24,7 @@
                     <td><?php echo e($post->id); ?></td>
                     <td>
                         <?php if($post->image): ?>
-                            <img src="<?php echo e(asset($post->image)); ?>" alt="" class="img-thumbnail" style="max-height:60px;">
+                            <img src="<?php echo e(asset('public/'.$post->image)); ?>" alt="" class="img-thumbnail" style="max-height:60px;">
                         <?php endif; ?>
                     </td>
                     <td>

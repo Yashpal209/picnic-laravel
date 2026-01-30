@@ -43,7 +43,7 @@
                     @enderror
                     @if (!empty($category?->thumbnail))
                         <div class="mt-2">
-                            <img src="{{ $category->thumbnail }}" alt="Preview" class="img-thumbnail preview-thumb">
+                            <img src="{{ asset('public/' . $category->thumbnail) }}" alt="Preview" class="img-thumbnail preview-thumb">
                         </div>
                     @endif
                 </div>

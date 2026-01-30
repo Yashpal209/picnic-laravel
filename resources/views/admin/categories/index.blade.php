@@ -28,7 +28,7 @@
                             <td>{{ $cat->id }}</td>
                             <td>
                                 @if ($cat->thumbnail)
-                                    <img src="{{ $cat->thumbnail }}" alt="" class="img-thumbnail"
+                                    <img src="{{ asset('public/' . $cat->thumbnail) }}" alt="" class="img-thumbnail"
                                         style="max-height:50px;">
                                 @endif
                             </td>

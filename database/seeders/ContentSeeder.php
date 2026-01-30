@@ -101,11 +101,11 @@ class ContentSeeder extends Seeder
 
         // Instagram
         InstagramPost::create([
-            'image' => 'assets/images/flavors/1.png',
+            'image' => 'public/assets/images/flavors/1.png',
             'post_url' => 'https://www.instagram.com/p/DQ54-fyiO0G/'
         ]);
         InstagramPost::create([
-            'image' => 'assets/images/flavors/2.png',
+            'image' => 'public/assets/images/flavors/2.png',
             'post_url' => 'https://www.instagram.com/p/DRmdEt-Ec_E/'
         ]);
 

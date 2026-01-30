@@ -41,7 +41,7 @@
                 @error('image')<div class="invalid-feedback">{{ $message }}</div>@enderror
                 @if(!empty($product?->image))
                     <div class="mt-2">
-                        <img src="{{ $product->image }}" alt="Preview" class="img-thumbnail preview-thumb">
+                        <img src="{{ asset('public/' . $product->image) }}" alt="Preview" class="img-thumbnail preview-thumb">
                     </div>
                 @endif
             </div>

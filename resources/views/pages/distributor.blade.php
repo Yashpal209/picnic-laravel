@@ -19,7 +19,7 @@
                         NOW</a>
                 </div>
                 <div class="col-md-6">
-                    <img src="{{ asset('assets/images/ice-creem/7.png') }}" alt="Distributor" class="img-fluid">
+                    <img src="{{ asset('public/assets/images/ice-creem/7.png') }}" alt="Distributor" class="img-fluid">
                 </div>
             </div>
         </div>
@@ -30,7 +30,7 @@
             <div class="row">
                 <h2 class="text-end pb-1">BUILD YOUR FUTURE<br>TAKE CHARGE!!!<br>FILL A DISTRIBUTOR FORM TODAY</h2>
                 <div class="col-md-6">
-                    <img src="{{ asset('assets/images/frenchise/wooden.png') }}" alt="Wooden" class="img-fluid">
+                    <img src="{{ asset('public/assets/images/frenchise/wooden.png') }}" alt="Wooden" class="img-fluid">
                 </div>
                 <div class="col-md-6">
                     <p class="text-end">Take charge of your business future today! Join PICNIC Ice Creams as a distributor
@@ -50,13 +50,13 @@
                     <div class="container-fluid">
                         <div class="row d-flex justify-content-center ">
                             <h2 class="mt-2">THE PICNIC ADVANTAGE</h2>
-                            <div class="col-5 pb-2"><img src="{{ asset('assets/images/frenchise/poster-1.png') }}"
+                            <div class="col-5 pb-2"><img src="{{ asset('public/assets/images/frenchise/poster-1.png') }}"
                                     alt="" class="img-fluid"></div>
-                            <div class="col-5 pb-2"><img src="{{ asset('assets/images/frenchise/poster-2.png') }}"
+                            <div class="col-5 pb-2"><img src="{{ asset('public/assets/images/frenchise/poster-2.png') }}"
                                     alt="" class="img-fluid"></div>
-                            <div class="col-5 pb-2"><img src="{{ asset('assets/images/frenchise/poster-3.png') }}"
+                            <div class="col-5 pb-2"><img src="{{ asset('public/assets/images/frenchise/poster-3.png') }}"
                                     alt="" class="img-fluid"></div>
-                            <div class="col-5 pb-2"><img src="{{ asset('assets/images/frenchise/poster-4.png') }}"
+                            <div class="col-5 pb-2"><img src="{{ asset('public/assets/images/frenchise/poster-4.png') }}"
                                     alt="" class="img-fluid"></div>
                         </div>
                     </div>
@@ -66,13 +66,13 @@
                     <h2 class="mt-2">COMPETITION OUTLOOK</h2>
                     <div class="container-fluid">
                         <div class="row d-flex justify-content-center ">
-                            <div class="col-5 pb-2"><img src="{{ asset('assets/images/frenchise/outlook-1.png') }}"
+                            <div class="col-5 pb-2"><img src="{{ asset('public/assets/images/frenchise/outlook-1.png') }}"
                                     alt="" class="img-fluid"></div>
-                            <div class="col-5 pb-2"><img src="{{ asset('assets/images/frenchise/outlook-2.png') }}"
+                            <div class="col-5 pb-2"><img src="{{ asset('public/assets/images/frenchise/outlook-2.png') }}"
                                     alt="" class="img-fluid"></div>
-                            <div class="col-5 pb-2"><img src="{{ asset('assets/images/frenchise/outlook-3.png') }}"
+                            <div class="col-5 pb-2"><img src="{{ asset('public/assets/images/frenchise/outlook-3.png') }}"
                                     alt="" class="img-fluid"></div>
-                            <div class="col-5 pb-2"><img src="{{ asset('assets/images/frenchise/outlook-4.png') }}"
+                            <div class="col-5 pb-2"><img src="{{ asset('public/assets/images/frenchise/outlook-4.png') }}"
                                     alt="" class="img-fluid"></div>
                         </div>
                     </div>
@@ -119,7 +119,7 @@
                     </form>
                 </div>
                 <div class="col-md-6">
-                    <img src="{{ asset('assets/images/500x350.png') }}" alt="Contact Distributor"
+                    <img src="{{ asset('public/assets/images/500x350.png') }}" alt="Contact Distributor"
                         class="w-100 h-auto rounded-3">
                 </div>
             </div>

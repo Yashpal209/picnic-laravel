@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <div class="d-flex align-items-center">
             <a href="<?php echo e(route('home')); ?>">
-                <img src="<?php echo e(asset('assets/images/picnic-removebg-preview.png')); ?>" alt="LOGO" class="logo img-fluid">
+                <img src="<?php echo e(asset('public/assets/images/picnic-removebg-preview.png')); ?>" alt="LOGO" class="logo img-fluid">
             </a>
             <div class="d-none d-md-flex align-items-center mx-auto"></div>
 
@@ -17,7 +17,7 @@
             </div>
 
             <div class="d-none d-md-flex align-items-center mx-auto">
-                <a href="https://pureshmilk.com/"> <img class="logo ms-3 ms-md-4" src="<?php echo e(asset('assets/images/puresh-logo.png')); ?>" alt="Ice Cream"></a>
+                <a href="https://pureshmilk.com/"> <img class="logo ms-3 ms-md-4" src="<?php echo e(asset('public/assets/images/puresh-logo.png')); ?>" alt="Ice Cream"></a>
             </div>
 
             <div class="d-md-none d-flex align-items-center ms-auto">
@@ -33,7 +33,7 @@
     <div id="mobile-menu" class="collapse d-md-none position-absolute top-100 start-0 w-100 mobile-menu-bg shadow-lg mobile-nav">
         <div class="text-center pt-3">
             <a href="https://pureshmilk.com/">
-                <img src="<?php echo e(asset('assets/images/puresh-logo.png')); ?>" alt="Logo" class="img-fluid" style="max-width:130px;">
+                <img src="<?php echo e(asset('public/assets/images/puresh-logo.png')); ?>" alt="Logo" class="img-fluid" style="max-width:130px;">
             </a>
         </div>
 

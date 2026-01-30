@@ -30,7 +30,7 @@
                     <td>{{ $slider->id }}</td>
                     <td>
                         @if($slider->image)
-                            <img src="{{ asset($slider->image) }}" alt="" class="img-thumbnail" style="max-height:60px;">
+                            <img src="{{ asset('public/' . $slider->image) }}" alt="" class="img-thumbnail" style="max-height:60px;">
                         @endif
                     </td>
                     <td>{{ $slider->title }}</td>

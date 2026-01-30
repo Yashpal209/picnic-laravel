@@ -26,7 +26,7 @@
                     <td>{{ $post->id }}</td>
                     <td>
                         @if($post->image)
-                            <img src="{{ asset($post->image) }}" alt="" class="img-thumbnail" style="max-height:60px;">
+                            <img src="{{ asset('public/'.$post->image) }}" alt="" class="img-thumbnail" style="max-height:60px;">
                         @endif
                     </td>
                     <td>

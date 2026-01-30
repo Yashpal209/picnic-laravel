@@ -22,7 +22,7 @@
                     @foreach ($categories as $cat)
                         <a href="{{ route('flavours', $cat->slug) }}"
                             class="cat-item mb-3 {{ $selectedCategory?->id === $cat->id ? 'active' : '' }}">
-                            <img src="{{ asset($cat->thumbnail ?? 'assets/images/500x350.png') }}"
+                            <img src="{{ asset('public/' . ($cat->thumbnail ?? 'public/assets/images/500x350.png')) }}"
                                 alt="{{ $cat->name }}">
                             <span>{{ $cat->name }}</span>
                         </a>
@@ -36,7 +36,7 @@
                             <div class="col-md-4 mb-4">
                                 <div class="product-card text-center">
                                     @if ($product->image)
-                                        <img src="{{ asset($product->image) }}" alt="{{ $product->name }}">
+                                        <img src="{{ asset('public/' . $product->image) }}" alt="{{ $product->name }}">
                                     @endif
 
                                     <h4 class="mt-2">{{ $product->name }}</h4>

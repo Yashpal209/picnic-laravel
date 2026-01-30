@@ -24,7 +24,7 @@
         <div class="row">
             @forelse($products->take(4) as $product)
                 <div class="col-md-3 p-0 m-0">
-                    <img src="{{ asset($product->image ?? 'assets/images/500X300.png') }}" alt="{{ $product->name }}" class="img-fluid">
+                    <img src="{{ asset($product->image ?? 'public/assets/images/500X300.png') }}" alt="{{ $product->name }}" class="img-fluid">
                 </div>
             @empty
                 <div class="col-12 text-center py-4">
@@ -45,7 +45,7 @@
                 <div class="col-md-4 pt-3">
                     <div class="text-1 text-center p-2">
                         <div class="text">
-                            <img src="{{ asset($post->image ?? 'assets/images/placeholder.png') }}" alt="Instagram Gallery" class="img-fluid">
+                            <img src="{{ asset('public/' . ($post->image ?? 'assets/images/placeholder.png')) }}" alt="Instagram Gallery" class="img-fluid">
                         </div>
                         <p class="text-center">Instagram Post</p>
                         <div class="d-grid">

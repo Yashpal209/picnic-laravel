@@ -31,7 +31,7 @@
                                 class="img-hover-scale rounded-4 g"
                                 style="max-width: 100%; height: 400px; object-fit: contain;">
                         <?php else: ?>
-                            <img src="<?php echo e(asset('assets/images/placeholder.png')); ?>" alt="Product Image"
+                            <img src="<?php echo e(asset('public/assets/images/placeholder.png')); ?>" alt="Product Image"
                                 class="img-hover-scale rounded-4 "
                                 style="max-width: 100%; height: 400px; object-fit: contain;">
                         <?php endif; ?>

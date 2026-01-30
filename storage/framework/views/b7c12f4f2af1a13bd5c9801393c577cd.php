@@ -35,7 +35,7 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                     <div id="imagePreview" class="mt-2" <?php if(empty($instagramPost?->image)): ?> style="display:none;" <?php endif; ?>>
-                        <img id="previewImg" src="<?php echo e(asset($instagramPost?->image ?? '')); ?>" alt="Preview"
+                        <img id="previewImg" src="<?php echo e(asset('public/'.$instagramPost?->image ?? '')); ?>" alt="Preview"
                             class="img-thumbnail preview-thumb">
                         <p class="small text-muted mt-1">
                             <?php echo e(!empty($instagramPost?->image) ? 'Current: ' . basename($instagramPost->image) : ''); ?></p>

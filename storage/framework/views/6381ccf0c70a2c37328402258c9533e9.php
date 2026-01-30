@@ -27,7 +27,7 @@
                     <?php endif; ?>
                 </div>
                 <div class="image-container">
-                    <img src="<?php echo e($slide->image); ?>" class="slider-image" alt="<?php echo e($slide->title); ?>">
+                    <img src="<?php echo e(asset('public/' . $slide->image)); ?>" class="slider-image" alt="<?php echo e($slide->title); ?>">
                 </div>
                 <?php if($slide->cta_text): ?>
                     <div class="offer-badge"><?php echo e($slide->cta_text); ?></div>
@@ -41,7 +41,7 @@
                     <a href="#">Order Now</a>
                 </div>
                 <div class="image-container">
-                    <img src="<?php echo e(asset('assets/images/ice-creem/7.png')); ?>" class="slider-image" alt="Strawberry Ice Cream">
+                    <img src="<?php echo e(asset('public/assets/images/ice-creem/7.png')); ?>" class="slider-image" alt="Strawberry Ice Cream">
                 </div>
                 <div class="offer-badge">Download Brochures</div>
             </div>
@@ -93,7 +93,7 @@
                 <a href="<?php echo e(route('flavours', $category->slug)); ?>"
                     class="col-12 col-sm-6 col-lg-3 position-relative d-flex flex-column justify-content-center align-items-center p-4 p-md-5 text-white <?php echo e($bgClasses[$idx % count($bgClasses)]); ?> text-decoration-none">
                     <h3 class="display-6 fw-bold mb-4 text-shadow-dark"><?php echo e($category->name); ?></h3>
-                    <img src="<?php echo e($category->thumbnail); ?>" alt="<?php echo e($category->name); ?>"
+                    <img src="<?php echo e(asset('public/' . $category->thumbnail)); ?>" alt="<?php echo e($category->name); ?>"
                         class="rounded-circle mb-4 og-card-img-main">
                 </a>
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
@@ -126,7 +126,7 @@
                 <?php $__empty_1 = true; $__currentLoopData = $instagram_posts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $post): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?>
                     <div class="col-md-3 col-4 p-0 m-0">
                         <a href="<?php echo e($post->post_url ?: 'https://www.instagram.com/picnic_icecreams/'); ?>" target="_blank">
-                            <img src="<?php echo e(asset($post->image)); ?>" alt="Instagram preview" class="img-fluid">
+                            <img src="<?php echo e(asset('public/' . $post->image)); ?>" alt="Instagram preview" class="img-fluid">
                         </a>
                         <div class="instagram-overlay">
                             <div class="d-flex gap-2">
@@ -277,7 +277,7 @@ unset($__errorArgs, $__bag); ?>
 
                 <!-- Right: Image -->
                 <div class="col-md-6">
-                    <img src="./assets/images/500x350.png" alt="Contact Distributor" class="w-100 h-auto rounded-3">
+                    <img src="<?php echo e(asset('public/assets/images/500x350.png')); ?>" alt="Contact Distributor" class="w-100 h-auto rounded-3">
                 </div>
             </div>
         </div>

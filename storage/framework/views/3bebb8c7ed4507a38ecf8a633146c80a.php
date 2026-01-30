@@ -6,15 +6,15 @@
     <title><?php echo $__env->yieldContent('title', 'Admin - PICNIC'); ?></title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
-    <link rel="shortcut icon" href="<?php echo e(asset('assets/images/favicon.png')); ?>" type="image/x-icon">
-    <link rel="stylesheet" href="<?php echo e(asset('assets/css/admin.css')); ?>">
+    <link rel="shortcut icon" href="<?php echo e(asset('public/assets/images/favicon.png')); ?>" type="image/x-icon">
+    <link rel="stylesheet" href="<?php echo e(asset('public/assets/css/admin.css')); ?>">
 
 </head>
 <body class="admin-body">
 <div class="d-flex h-100 admin-shell">
     <nav class="sidebar d-none d-lg-flex flex-column border-end p-3">
         <div class="mb-4 d-flex align-items-center justify-content-center">
-            <img src="<?php echo e(asset('assets/images/picnic-removebg-preview.png')); ?>" alt="PICNIC Logo" style="height: 40px; width: auto;">
+            <img src="<?php echo e(asset('public/assets/images/picnic-removebg-preview.png')); ?>" alt="PICNIC Logo" style="height: 40px; width: auto;">
         </div>
         <div class="nav flex-column nav-pills gap-2">
             <a href="<?php echo e(route('admin.dashboard')); ?>" class="nav-link <?php echo e(request()->routeIs('admin.dashboard') ? 'active' : ''); ?>">
@@ -29,15 +29,15 @@
             <a href="<?php echo e(route('admin.products.index')); ?>" class="nav-link <?php echo e(request()->routeIs('admin.products.*') ? 'active' : ''); ?>">
                 <i class="bi bi-box"></i> Products
             </a>
-            <a href="<?php echo e(route('admin.stores.index')); ?>" class="nav-link <?php echo e(request()->routeIs('admin.stores.*') ? 'active' : ''); ?>">
-                <i class="bi bi-shop"></i> Stores
-            </a>
             
             <a href="<?php echo e(route('admin.videos.index')); ?>" class="nav-link <?php echo e(request()->routeIs('admin.videos.*') ? 'active' : ''); ?>">
                 <i class="bi bi-play-circle"></i> Videos
             </a>
             <a href="<?php echo e(route('admin.instagram-posts.index')); ?>" class="nav-link <?php echo e(request()->routeIs('admin.instagram-posts.*') ? 'active' : ''); ?>">
                 <i class="bi bi-instagram"></i> Instagram Posts
+            </a>
+             <a href="<?php echo e(route('admin.stores.index')); ?>" class="nav-link <?php echo e(request()->routeIs('admin.stores.*') ? 'active' : ''); ?>">
+                <i class="bi bi-shop"></i> Stores
             </a>
             <a href="<?php echo e(route('admin.leads.index')); ?>" class="nav-link <?php echo e(request()->routeIs('admin.leads.*') ? 'active' : ''); ?>">
                 <i class="bi bi-chat-dots"></i> Leads
@@ -92,7 +92,7 @@
 
 <div class="offcanvas offcanvas-start admin-offcanvas" tabindex="-1" id="adminMobileNav" aria-labelledby="adminMobileNavLabel">
     <div class="offcanvas-header d-flex align-items-center justify-content-between">
-        <img src="<?php echo e(asset('assets/images/picnic-removebg-preview.png')); ?>" alt="PICNIC Logo" style="height: 35px; width: auto;">
+        <img src="<?php echo e(asset('public/assets/images/picnic-removebg-preview.png')); ?>" alt="PICNIC Logo" style="height: 35px; width: auto;">
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
@@ -109,15 +109,15 @@
             <a href="<?php echo e(route('admin.products.index')); ?>" class="nav-link <?php echo e(request()->routeIs('admin.products.*') ? 'active' : ''); ?>" data-bs-dismiss="offcanvas">
                 <i class="bi bi-box"></i> Products
             </a>
-            <a href="<?php echo e(route('admin.stores.index')); ?>" class="nav-link <?php echo e(request()->routeIs('admin.stores.*') ? 'active' : ''); ?>" data-bs-dismiss="offcanvas">
-                <i class="bi bi-shop"></i> Stores
-            </a>
             
             <a href="<?php echo e(route('admin.videos.index')); ?>" class="nav-link <?php echo e(request()->routeIs('admin.videos.*') ? 'active' : ''); ?>" data-bs-dismiss="offcanvas">
                 <i class="bi bi-play-circle"></i> Videos
             </a>
             <a href="<?php echo e(route('admin.instagram-posts.index')); ?>" class="nav-link <?php echo e(request()->routeIs('admin.instagram-posts.*') ? 'active' : ''); ?>" data-bs-dismiss="offcanvas">
                 <i class="bi bi-instagram"></i> Instagram Posts
+            </a>
+             <a href="<?php echo e(route('admin.stores.index')); ?>" class="nav-link <?php echo e(request()->routeIs('admin.stores.*') ? 'active' : ''); ?>" data-bs-dismiss="offcanvas">
+                <i class="bi bi-shop"></i> Stores
             </a>
             <a href="<?php echo e(route('admin.leads.index')); ?>" class="nav-link <?php echo e(request()->routeIs('admin.leads.*') ? 'active' : ''); ?>" data-bs-dismiss="offcanvas">
                 <i class="bi bi-chat-dots"></i> Leads

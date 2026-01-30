@@ -33,7 +33,7 @@
                                 class="img-hover-scale rounded-4 g"
                                 style="max-width: 100%; height: 400px; object-fit: contain;">
                         @else
-                            <img src="{{ asset('assets/images/placeholder.png') }}" alt="Product Image"
+                            <img src="{{ asset('public/assets/images/placeholder.png') }}" alt="Product Image"
                                 class="img-hover-scale rounded-4 "
                                 style="max-width: 100%; height: 400px; object-fit: contain;">
                         @endif

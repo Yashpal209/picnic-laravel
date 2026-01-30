@@ -23,7 +23,7 @@
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
                     <div id="imagePreview" class="mt-2" @if (empty($instagramPost?->image)) style="display:none;" @endif>
-                        <img id="previewImg" src="{{ asset($instagramPost?->image ?? '') }}" alt="Preview"
+                        <img id="previewImg" src="{{ asset('public/'.$instagramPost?->image ?? '') }}" alt="Preview"
                             class="img-thumbnail preview-thumb">
                         <p class="small text-muted mt-1">
                             {{ !empty($instagramPost?->image) ? 'Current: ' . basename($instagramPost->image) : '' }}</p>

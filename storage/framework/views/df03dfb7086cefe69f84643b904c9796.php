@@ -28,7 +28,7 @@
                     <td><?php echo e($slider->id); ?></td>
                     <td>
                         <?php if($slider->image): ?>
-                            <img src="<?php echo e(asset($slider->image)); ?>" alt="" class="img-thumbnail" style="max-height:60px;">
+                            <img src="<?php echo e(asset('public/' . $slider->image)); ?>" alt="" class="img-thumbnail" style="max-height:60px;">
                         <?php endif; ?>
                     </td>
                     <td><?php echo e($slider->title); ?></td>

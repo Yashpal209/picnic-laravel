@@ -83,7 +83,7 @@ endif;
 unset($__errorArgs, $__bag); ?>
                     <?php if(!empty($category?->thumbnail)): ?>
                         <div class="mt-2">
-                            <img src="<?php echo e($category->thumbnail); ?>" alt="Preview" class="img-thumbnail preview-thumb">
+                            <img src="<?php echo e(asset('public/' . $category->thumbnail)); ?>" alt="Preview" class="img-thumbnail preview-thumb">
                         </div>
                     <?php endif; ?>
                 </div>

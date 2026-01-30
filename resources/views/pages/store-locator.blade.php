@@ -3,7 +3,7 @@
 @section('title', 'Store Locator - Picnic Ice Creams')
 
 @section('content')
-<section class="py-5 px-3 px-md-5" style="background: url('./assets/images/bg/color2.png') no-repeat center center; background-size: cover;">
+<section class="py-5 px-3 px-md-5" style="background: url('{{ asset('public/assets/images/bg/color2.png') }}') no-repeat center center; background-size: cover;">
     <div class="container text-center">
         <h1 class="h1 fw-bold text-shadow-dark mb-4">
             <span class="text-success">Store </span>Locator

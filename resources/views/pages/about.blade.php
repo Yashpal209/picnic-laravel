@@ -36,7 +36,7 @@
             <!-- Timeline Item 1 -->
             <div class="timeline-item left">
                 <div class="timeline-content bg-white rounded-4 shadow-lg p-4 timeline-content-custom">
-                    <img src="./assets/images/ice-creem/6.png" alt="Strawberry Bliss" class="mx-auto mb-3 timeline-item-img">
+                    <img src="{{ asset('public/assets/images/ice-creem/6.png') }}" alt="Strawberry Bliss" class="mx-auto mb-3 timeline-item-img">
                     <h3 class="fs-4 fw-semibold text-pink mb-2">100% Pure Cow Milk, Guaranteed by Puresh Daily </h3>
                     <p class="text-secondary small">We use only the finest, 100% pure Cow Milk as the rich foundation for all our Kulfis. This isn't just about taste-it's about tradition and health, validated by our dairy roots.</p>
                     <ul>
@@ -49,7 +49,7 @@
             <!-- Timeline Item 2 -->
             <div class="timeline-item right">
                 <div class="timeline-content bg-white rounded-4 shadow-lg p-4 timeline-content-custom">
-                    <img src="./assets/images/ice-creem/5.png" alt="Mint Magic" class="mx-auto mb-3 timeline-item-img">
+                    <img src="{{ asset('public/assets/images/ice-creem/5.png') }}" alt="Mint Magic" class="mx-auto mb-3 timeline-item-img">
                     <h3 class="fs-4 fw-semibold text-success mb-2">Zero Palm Oil. Zero Compromise on Health</h3>
                     <p class="text-secondary small">We respect the authentic tradition of Indian sweets and believe shortcuts compromise both taste and health. Our pledge is simple: only pure dairy richness, nothing less. "We are providing the best ice cream for our Indians, crafted to help keep your health healthier."</p>
                 </div>
@@ -58,7 +58,7 @@
             <!-- Timeline Item 3 -->
             <div class="timeline-item left">
                 <div class="timeline-content bg-white rounded-4 shadow-lg p-4 timeline-content-custom">
-                    <img src="./assets/images/ice-creem/3.png" alt="Blueberry Dream" class="mx-auto mb-3 timeline-item-img">
+                    <img src="{{ asset('public/assets/images/ice-creem/3.png') }}" alt="Blueberry Dream" class="mx-auto mb-3 timeline-item-img">
                     <h3 class="fs-4 fw-semibold text-primary mb-2">Our Journey Starts with Tradition:</h3>
                     <p class="text-secondary small">Authentic Kulfi Our journey begins by mastering the authentic art of Kulfi making. We honour this beloved Indian tradition by slow-simmering our pure cow milk with natural, hand-picked ingredients to achieve that signature dense texture and deep, satisfying flavour. Real dry fruits, natural colour,healthier fruit pulp.Every kulfi is a nostalgic reminder of simpler times, perfected for your enjoyment today. </p>
                 </div>
@@ -67,7 +67,7 @@
             <!-- Timeline Item 4 -->
             <div class="timeline-item right">
                 <div class="timeline-content bg-white rounded-4 shadow-lg p-4 timeline-content-custom">
-                    <img src="./assets/images/ice-creem/6.png" alt="Mint Magic" class="mx-auto mb-3 timeline-item-img">
+                    <img src="{{ asset('public/assets/images/ice-creem/6.png') }}" alt="Mint Magic" class="mx-auto mb-3 timeline-item-img">
                     <h3 class="fs-4 fw-semibold text-success mb-2">Affordable Price </h3>
                     <p class="text-secondary small">Our pack size 30ml to 50ml is suitable for kids and rates are half than that of competition.</p>
                 </div>
