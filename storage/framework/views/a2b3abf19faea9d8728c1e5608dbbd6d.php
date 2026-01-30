@@ -1,9 +1,7 @@
-@extends('layouts.app')
+<?php $__env->startSection('title', 'Store Locator - Picnic Ice Creams'); ?>
 
-@section('title', 'Store Locator - Picnic Ice Creams')
-
-@section('content')
-<section class="py-5 px-3 px-md-5" style="background: url('{{ asset('public/assets/images/bg/color2.png') }}') no-repeat center center; background-size: cover;">
+<?php $__env->startSection('content'); ?>
+<section class="py-5 px-3 px-md-5" style="background: url('<?php echo e(asset('public/assets/images/bg/color2.png')); ?>') no-repeat center center; background-size: cover;">
     <div class="container text-center">
         <h1 class="h1 fw-bold text-shadow-dark mb-4">
             <span class="text-success">Store </span>Locator
@@ -22,26 +20,26 @@
 
             <div class="col-lg-4">
                 <div class="store-list h-100 overflow-auto">
-                    @forelse($stores as $store)
+                    <?php $__empty_1 = true; $__currentLoopData = $stores; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $store): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?>
                         <div class="store-sec p-3 mb-2">
                             <div class="row">
                                 <div class="col-8">
-                                    <h6>{{ $store->name }}</h6>
-                                    <p><i class="fa-solid fa-location-dot"></i> {{ $store->address }}, {{ $store->city }}</p>
-                                    @if($store->phone)
-                                        <p><i class="fa-solid fa-phone"></i> {{ $store->phone }}</p>
-                                    @endif
+                                    <h6><?php echo e($store->name); ?></h6>
+                                    <p><i class="fa-solid fa-location-dot"></i> <?php echo e($store->address); ?>, <?php echo e($store->city); ?></p>
+                                    <?php if($store->phone): ?>
+                                        <p><i class="fa-solid fa-phone"></i> <?php echo e($store->phone); ?></p>
+                                    <?php endif; ?>
                                 </div>
                                 <div class="col-2 text-center">
                                     <button class="btn btn-sm btn-outline-success locate-btn"
-                                            onclick="locateStore({{ $store->latitude ?? 23.354972 }}, {{ $store->longitude ?? 85.295169 }}, '{{ $store->name }}')"
+                                            onclick="locateStore(<?php echo e($store->latitude ?? 23.354972); ?>, <?php echo e($store->longitude ?? 85.295169); ?>, '<?php echo e($store->name); ?>')"
                                             title="Locate on Map">
                                         <i class="fa-regular fa-circle"></i>
                                         <small>Open</small>
                                     </button>
                                 </div>
                                 <div class="col-2 text-center">
-                                    <a href="{{ route('order') }}" target="_blank" class="btn btn-sm btn-outline-primary"
+                                    <a href="<?php echo e(route('order')); ?>" target="_blank" class="btn btn-sm btn-outline-primary"
                                        title="View Menu">
                                         <i class="fa-solid fa-tv"></i>
                                         <small>Menu</small>
@@ -49,13 +47,13 @@
                                 </div>
                             </div>
                         </div>
-                    @empty
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>
                         <div class="store-sec p-3 mb-2">
                             <div class="text-center text-muted">
                                 <p>No stores available at the moment.</p>
                             </div>
                         </div>
-                    @endforelse
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
@@ -64,7 +62,7 @@
 
 
 
-@push('scripts')
+<?php $__env->startPush('scripts'); ?>
 <script>
 let map;
 let markers = [];
@@ -86,11 +84,11 @@ function initMap() {
     });
 
     // Add markers for all stores
-    @foreach($stores as $store)
-        @if($store->latitude && $store->longitude)
-            addMarker({ lat: {{ $store->latitude }}, lng: {{ $store->longitude }} }, '{{ $store->name }}', '{{ $store->address }}, {{ $store->city }}');
-        @endif
-    @endforeach
+    <?php $__currentLoopData = $stores; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $store): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+        <?php if($store->latitude && $store->longitude): ?>
+            addMarker({ lat: <?php echo e($store->latitude); ?>, lng: <?php echo e($store->longitude); ?> }, '<?php echo e($store->name); ?>', '<?php echo e($store->address); ?>, <?php echo e($store->city); ?>');
+        <?php endif; ?>
+    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
     // If no stores have coordinates, show default location
     if (markers.length === 0) {
@@ -140,7 +138,9 @@ function locateStore(lat, lng, storeName) {
     });
 }
 </script>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key={{ config('services.google_maps.key') }}&callback=initMap"></script>
-@endpush
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=<?php echo e(config('services.google_maps.key')); ?>&callback=initMap"></script>
+<?php $__env->stopPush(); ?>
 
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.app', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?><?php /**PATH C:\xampp\htdocs\yashpal\picnic-laravel\resources\views/pages/store-locator.blade.php ENDPATH**/ ?>
